@@ -10,7 +10,6 @@ function App() {
     <div>
       <Header />
       <DateComponent />
-      <br/>
       <Calculator />
       <Footer />
     </div>

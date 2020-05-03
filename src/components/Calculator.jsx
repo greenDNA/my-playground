@@ -63,7 +63,7 @@ function Calculator() {
   }
 
   return (
-    <div style={{ width: "200px", border: "2px solid black"}}>
+    <div style={{ width: "200px", border: "1px solid black"}}>
       <Display val={display} />
       <ClearButton clearDisplay={updateDisplay} />
       <Row
