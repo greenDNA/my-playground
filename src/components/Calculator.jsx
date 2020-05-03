@@ -32,19 +32,41 @@ function buttonValuesMappedToArray(pos1, pos2) {
 
 function Calculator() {
   const [display, setDisplay] = useState("0");
-
+/**
+ * 
+ * @param {*} command - relates to the button pressed in the UI
+ * BUGS: Catch user errors. Evaluating strange phrases crashes the project
+ * Ex: "." or ".+" or ".+6". They don't make sense from a mathematical standpoint
+ */
   function updateDisplay(command) {
-      if(display === "0"){
-          if(command === "+" || command === "-" || command === "/" || command === "*"){
-              return;
-          }
-      }else if ( display.endsWith("+") || display.endsWith("-") || display.endsWith("*") || display.endsWith("/")){
-        if( command === "+" || command === "-" || command === "/" || command === "*" ){
-            setDisplay( (prevValue) => {
-                return prevValue.slice(0, prevValue.length-1);
-            });
-        }
+    if (display === "0") {
+      if (
+        command === "+" ||
+        command === "-" ||
+        command === "/" ||
+        command === "*"
+      ) {
+        return;
       }
+    } else if (
+      display.endsWith("+") ||
+      display.endsWith("-") ||
+      display.endsWith("*") ||
+      display.endsWith("/")
+    ) {
+      if (
+        command === "+" ||
+        command === "-" ||
+        command === "/" ||
+        command === "*"
+      ) {
+        setDisplay((prevValue) => {
+          return prevValue.slice(0, prevValue.length - 1);
+        });
+      }
+    } else if (command === "." && display.includes(".")) {
+      return;
+    }
     if (command === CLEAR) {
       setDisplay("0");
     } else {
@@ -56,14 +78,14 @@ function Calculator() {
         });
       }
     }
-    if (command === "="){
-        const result = eval(display).toString();
-        setDisplay(result);
+    if (command === "=") {
+      const result = eval(display).toString();
+      setDisplay(result);
     }
   }
 
   return (
-    <div style={{ width: "200px", border: "1px solid black"}}>
+    <div style={{ width: "200px", border: "1px solid black" }}>
       <Display val={display} />
       <ClearButton clearDisplay={updateDisplay} />
       <Row
