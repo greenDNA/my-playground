@@ -1,12 +1,18 @@
 import React from "react";
 import DateComponent from "./DateComponent";
+import Header from "./Header";
+import Footer from "./Footer";
+import Calculator from "./Calculator";
+
 
 function App() {
   return (
     <div>
-      <h1>Welcome to My Playground!</h1>
-      <h2>Hello World! </h2>
+      <Header />
       <DateComponent />
+      <br/>
+      <Calculator />
+      <Footer />
     </div>
   );
 }

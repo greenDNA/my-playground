@@ -8,12 +8,12 @@ function DateComponent() {
   const [date, setDate] = useState("");
 
   function getDate() {
-    const refreshDate = new Date().toLocaleString(); 
-    setDate(refreshDate);
+    const refreshedDate = new Date().toLocaleString(); 
+    setDate(refreshedDate);
   }
 
   return (
-    <div>
+    <div style={{border: "2px solid black"}}>
       <h1>What is the date and time?</h1>
       <button onClick={getDate}>Detect Date and Time</button>
       <h2>{date}</h2>
