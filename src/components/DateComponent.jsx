@@ -13,7 +13,8 @@ function DateComponent() {
   }
 
   return (
-    <div style={{border: "1px solid black"}}>
+    <div className="wrap-border">
+      <p style={{textDecoration: "underline"}}>DateComponent</p>
       <h1>What is the date and time?</h1>
       <button onClick={getDate}>Detect Date and Time</button>
       <h2>{date}</h2>
