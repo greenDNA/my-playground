@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Calculator from "./Calculator";
 import Weather from "./Weather";
+import BillCalculator from "./BillCalculator";
 // import Pomodoro from "./Pomodoro"; // unfinished component with bugs
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Calculator />
       {/* <Pomodoro /> */}
       <Weather />
+      <BillCalculator />
 
       <Footer />
     </div>
