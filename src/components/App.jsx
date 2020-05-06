@@ -3,7 +3,7 @@ import DateComponent from "./DateComponent";
 import Header from "./Header";
 import Footer from "./Footer";
 import Calculator from "./Calculator";
-import Pomodoro from "./Pomodoro";
+// import Pomodoro from "./Pomodoro"; // unfinished component with bugs
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
 
       <DateComponent />
       <Calculator />
-      <Pomodoro />
+      {/* <Pomodoro /> */}
 
       <Footer />
     </div>

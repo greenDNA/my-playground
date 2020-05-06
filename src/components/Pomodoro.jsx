@@ -10,6 +10,9 @@ const TIME_CONSTANT = 25;
  * 
  * The alerts can be sounds or switch focus to the tab the application is in.
  * Application image based to use the tomato, or is it an apple?
+ * 
+ * TODO: Sound functionality, play a sound on timer completion
+ * TODO: Timer lags when tab is out of focused, or switched. How to fix this to remain consistent?
  */
 function Pomodoro(){
 
@@ -19,7 +22,14 @@ function Pomodoro(){
     const [flag, setFlag] = useState(false);
 
     function updateTime(){
-        setTime( prev => {return prev -1} );
+        // setTime( prev => {return prev -1} );
+        // setMinutes( () => {
+        //     return Math.floor(timeInSeconds / 60);
+        // });
+        // setSeconds( () => {
+        //     return timeInSeconds % 60;
+        // });
+        setFlag(true);
     }
 
     /**
@@ -28,13 +38,16 @@ function Pomodoro(){
      * TODO: Change logic to use one object and update it over having several constants for useState()
      */
     useEffect(() => {
+        /**
+         * flag used to decide if decrement of variables used to compute time should occur
+         */
         if( flag ){
             const intervalID = setTimeout(() => {
+                // using this count variable got me from off by 2 error to off by 1 error
+                let count = timeInSeconds;
                 if(timeInSeconds === 0){
-                    clearInterval(intervalID);
-                } else {
                     setTime( (prevValue) => {
-                        console.log(prevValue);
+                        console.log(`value before using clear interval: {prevValue}`);
                         return prevValue-1;
                     });
                     setMinutes( () => {
@@ -43,14 +56,33 @@ function Pomodoro(){
                     setSeconds( () => {
                         return timeInSeconds % 60;
                     });
+                    //set useEffect flag to false to stop it from running and prevent setTimeout() from being called more
+                    setFlag(false);
+                    clearInterval(intervalID);
+                } else {
+                    setTime( (prevValue) => {
+                        console.log(prevValue);
+                        count = prevValue - 1;
+                        return count;
+                        // return prevValue-1;
+                    });
+                    setMinutes( () => {
+                        return Math.floor(count / 60);
+                        // return Math.floor(timeInSeconds / 60);
+                    });
+                    setSeconds( () => {
+                        return count % 60;
+                        // return timeInSeconds % 60;
+                    });
                 }
                 console.log(timeInSeconds, minutes, seconds);
             }, 1000); 
-        } else {
-            setFlag(true);
-        }
+        } 
+        // else {
+        //     setFlag(true);
+        // }
         
-    }, [timeInSeconds]);
+    }, [timeInSeconds, flag]);
 
     return (
         <div className="wrap-border">
@@ -60,9 +92,9 @@ function Pomodoro(){
                 style={{width: "300px"}}
                 src="https://www.thedissertationcoach.com/wp-content/uploads/The-Pomodoro-Technique.jpg" 
                 alt="pomodoro technique tomato" 
-                srcset="" />
+                srcSet="" />
             </div>
-            <button onClick={updateTime}>Start Timer</button>
+            <button onClick={updateTime}>{ flag ? "Start Timer" : "Timer Started" }</button>
             <h6>{minutes}:{seconds}</h6>
         </div>
     );
