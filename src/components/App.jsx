@@ -6,6 +6,7 @@ import Calculator from "./Calculator";
 import Weather from "./Weather";
 import BillCalculator from "./BillCalculator";
 import MusicPlayer from "./MusicPlayer";
+import NoteSaver from "./NoteSaver";
 // import Pomodoro from "./Pomodoro"; // unfinished component with bugs
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Weather />
       <BillCalculator />
       <MusicPlayer />
+      <NoteSaver />
 
       <Footer />
     </div>
