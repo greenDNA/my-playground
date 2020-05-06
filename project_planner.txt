@@ -1,0 +1,17 @@
+Music Player - Search songs, discover music, top songs, trending
+Meme Generator - Upload image, write caption, and build. Allow sharing to social media
+Instagram Ratio - Following : Followed ratio. See followers, see who isn't following back
+Social Media Account Hub - Sign into several accounts and view updates all congregated in one place
+Social Media Platform - User make posts, live feed, enable likes and comments on posts, user authentication
+E-commerce Platform
+Entertainment Platform - Online content for entertainment purposes
+Messaging Platform - Instant messaging, WhatsApp, Discord, etc
+Productivity Tool - Todo list, grocery list, task management tool
+Order Food Delivery - Order food and pay through your sevice
+Game
+Shuffle Card Deck
+Chat App
+Note Saving Application
+Image Flip Application - Vertical, Horizontal
+REACT ROUTER
+Bill Calculator
