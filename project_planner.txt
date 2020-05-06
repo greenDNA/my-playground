@@ -14,4 +14,3 @@ Chat App
 Note Saving Application
 Image Flip Application - Vertical, Horizontal
 REACT ROUTER
-Bill Calculator
