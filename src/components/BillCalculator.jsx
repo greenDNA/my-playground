@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 /**
  * TODO: Add support for discounts on bill
+ * TODO: Handle errors/warnings
+ * TODO: Refactor
+ * TODO: Issue with Form using String, Number, NaN
  */
 
 function BillCalculator(){
@@ -18,15 +21,19 @@ function BillCalculator(){
     }
     function updateBill(e){
         console.log(e.target.value);
-        setBill(e.target.value);
+        setBill(parseInt(e.target.value));
     }
     function updateTip(e){
-        setTipPercent(e.target.value);
+        setTipPercent(parseInt(e.target.value));
     }
     function updateParty(e){
-        setPartySize(e.target.value);
+        setPartySize(parseInt(e.target.value));
     }
     function solveTip(){
+        if( !Number.isInteger(bill) || !Number.isInteger(tipPercent) || !Number.isInteger(partySize) ){
+            console.log(typeof bill, typeof tipPercent, typeof partySize)
+            return 0;
+        }
         return bill * (tipPercent / 100.0) / partySize;
     }
 
