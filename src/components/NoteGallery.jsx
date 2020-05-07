@@ -6,7 +6,6 @@ function NoteGallery(props){
         <div>
             {/* Use ul and li, or map */}
             {/* Show a collection of notes here */}
-            <h3>Here are the notes</h3>
             <ul>
                 {props.noteArray.map( note => {
                     return <li>{note}</li>
