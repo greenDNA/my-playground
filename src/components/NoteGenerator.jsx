@@ -4,7 +4,9 @@ function NoteGenerator(props){
 
     function noteFactory(e){
         e.preventDefault();
-        props.pushNote(title + "\n" + description);
+        //props.pushNote(title + "\n" + description);
+        //console.log( {field1: 'text', field2: 'more text'});
+        props.pushNote({title: {title}, description: {description}});
         setTitle("");
         setDescription("");
     }

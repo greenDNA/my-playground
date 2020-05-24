@@ -20,7 +20,7 @@ function App() {
       <Weather />
       <BillCalculator />
       <MusicPlayer />
-      <NoteSaver />
+      {/* <NoteSaver /> Commented out while I try another solution */}
 
       <Footer />
     </div>

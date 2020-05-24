@@ -9,6 +9,7 @@ function NoteSaver(){
         addNote( (prevValue) => {
            return [...prevValue, newNote];
         })
+        console.log(notes);
     }
 
     return (
