@@ -16,11 +16,11 @@ function App() {
 
       <DateComponent />
       <Calculator />
-      {/* <Pomodoro /> */}
+      {/* <Pomodoro /> Issue computing when not the tab in focus */}
       <Weather />
       <BillCalculator />
       <MusicPlayer />
-      {/* <NoteSaver /> Commented out while I try another solution */}
+      <NoteSaver /> 
 
       <Footer />
     </div>
