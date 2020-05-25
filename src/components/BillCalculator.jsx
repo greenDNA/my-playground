@@ -43,13 +43,13 @@ function BillCalculator(){
 
         <form action="">
             <label htmlFor="">Bill Total</label>
-            <input onChange={updateBill} value={bill} type="number" name="" id="" placeholder="Enter bill total here"/>
+            <input onChange={updateBill} value={bill} type="number" name="" id="total" placeholder="Enter bill total here"/>
             <label htmlFor="">Tip Percentage</label>
-            <input onChange={updateTip} value={tipPercent} type="number" name="" id="" placeholder="Enter tip percentage"/>
+            <input onChange={updateTip} value={tipPercent} type="number" name="" id="percentage" placeholder="Enter tip percentage"/>
             <label htmlFor="">Party Size</label>
-            <input onChange={updateParty} value={partySize} type="number" name="" id="" placeholder="Enter size of the party" />
+            <input onChange={updateParty} value={partySize} type="number" name="" id="party" placeholder="Enter size of the party" />
             <label htmlFor="">Tip Per Person</label>
-            <input value={tipPerPerson} type="number" name="" id="" placeholder="Total tip per person will generate here" disabled/>
+            <input value={tipPerPerson} type="number" name="" id="tipperperson" placeholder="Total tip per person will generate here" disabled/>
             <button type="submit" onClick={findTip}>Calculate Tip Per Person</button>
         </form>
         </div>

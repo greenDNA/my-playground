@@ -25,9 +25,9 @@ function NoteGenerator(props){
         <div>
             <form action="">
                 <label htmlFor="">Title</label>
-                <input onChange={changeTitle} value={title} type="text" name="title" id="" placeholder="Enter note title here" />
+                <input onChange={changeTitle} value={title} type="text" name="title" id="title" placeholder="Enter note title here" />
                 <label htmlFor="">Description</label>
-                <input onChange={changeDescription} value={description} type="text" name="description" id="" placeholder="Enter note description here" />
+                <input onChange={changeDescription} value={description} type="text" name="description" id="description" placeholder="Enter note description here" />
                 <button onClick={noteFactory} type="submit">Submit Note</button>
 
             </form>

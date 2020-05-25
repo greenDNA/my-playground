@@ -36,7 +36,7 @@ function Weather(){
             <button onClick={refreshWeather}>Click to Update Weather</button>
             <br/>
             <label htmlFor="">Location</label>
-            <input value={location} onChange={updateLocation} type="text" name="" id=""/>
+            <input value={location} onChange={updateLocation} type="text" name="" id="location"/>
         </div>
     );
 }
